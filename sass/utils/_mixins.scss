@@ -1,0 +1,14 @@
+@mixin textProp($fw, $fh) {
+  font-weight: $fw;
+  line-height: $fh;
+}
+
+$socIconList: 'instagram', 'twitter', 'facebook', 'linkedin';
+
+@mixin insertSocialIcons($socIconList) {
+  @each $iconName in $socIconList {
+    .footer-link-#{$iconName} {
+      background-image: url(../images/svg/#{$iconName}.svg);
+    }
+  }
+}

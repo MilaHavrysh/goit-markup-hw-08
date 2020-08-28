@@ -1,0 +1,11 @@
+.section-title {
+  font-size: 28px;
+  @include textProp(700, 1.17);
+  text-align: center;
+  color: $title-light-theme-color;
+  margin-bottom: 30px;
+  @media screen and (min-width: 1200px) {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+}

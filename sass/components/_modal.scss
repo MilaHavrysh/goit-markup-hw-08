@@ -1,0 +1,230 @@
+.hero-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow-x: scroll;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.hero-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 609px;
+  background-color: #ffffff;
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    height: 581px;
+  }
+}
+
+.hero-modal-appeal {
+  display: block;
+  @include textProp(700, 1.15);
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: $title-light-theme-color;
+  padding-top: 40px;
+  margin-bottom: 30px;
+}
+
+.hero-modal-form-container {
+  position: relative;
+}
+
+.hero-modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-modal-form-input {
+  width: 448px;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 42px;
+  &:nth-child(-n + 3) {
+    margin-bottom: 28px;
+  }
+  &:focus {
+    outline: none;
+    border-color: $accent-color;
+  }
+}
+
+.hero-modal-form-label {
+  position: absolute;
+  top: 12px;
+  left: 42px;
+  @include textProp(400, 1.14);
+  letter-spacing: 0.01em;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .hero-modal-form-input:focus ~ &,
+  .hero-modal-form-input:not(:placeholder-shown) ~ & {
+    color: $accent-color;
+    transform: translate(-26px, -32px);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+  }
+}
+
+.modal-icon {
+  position: absolute;
+  top: 11px;
+  left: 16px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  .hero-modal-form-input:focus ~ & {
+    fill: $accent-color;
+  }
+}
+
+.modal-icon-mail {
+  padding: 3px 1.5px;
+}
+.modal-icon-tel {
+  padding: 2.5px;
+}
+
+.modal-icon-name {
+  padding: 3px;
+  .hero-modal-form-input:focus & {
+    fill: $accent-color;
+  }
+}
+
+.hero-textarea-contaier {
+  position: relative;
+}
+
+.hero-modal-form-textarea {
+  width: 448px;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  font-family: Roboto;
+  color: $text-light-them-color;
+  @include textProp(400, 1.14);
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+
+  &:focus {
+    outline: none;
+    border-color: $accent-color;
+  }
+}
+
+.hero-modal-form-textarea-label {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  @include textProp(400, 1.14);
+  letter-spacing: 0.01em;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  .hero-modal-form-textarea:focus ~ &,
+  .hero-modal-form-textarea:not(:placeholder-shown) ~ & {
+    color: $accent-color;
+    transform: translateY(-32px);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+  }
+}
+
+.hero-modal-form-checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  @include textProp(400, 1.71);
+}
+
+.hero-modal-form-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.hero-modal-form-custom-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 15px;
+  border: 1px solid #212121;
+  border-radius: 4px;
+  margin-right: 8px;
+  .hero-modal-form-checkbox:checked ~ & {
+    background-color: $accent-color;
+    border: transparent;
+  }
+}
+
+.checkbox-svg {
+  display: block;
+  fill: #ffffff;
+}
+
+.hero-modal-form-button {
+  width: 200px;
+  height: 50px;
+  background-color: $button-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: transparent;
+  @include textProp(700, 1.88);
+  font-size: 16px;
+  color: $text-dark-theme-color;
+  letter-spacing: 0.06em;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+    outline: none;
+  }
+}
+
+.hero-modal-button-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 7px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus {
+    outline: none;
+  }
+}
+
+.hero-modal-button-close:focus .modal-icon-close,
+.hero-modal-button-close:hover .modal-icon-close {
+  fill: $accent-color;
+}
+
+.agreement-link {
+  color: $accent-color;
+}

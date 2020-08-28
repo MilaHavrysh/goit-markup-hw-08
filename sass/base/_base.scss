@@ -1,0 +1,28 @@
+body {
+  background-color: $primary-white-background-color;
+  font-family: $main-font;
+  font-size: 14px;
+  color: $text-light-them-color;
+  letter-spacing: 0.03em;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+}
+.list {
+  list-style: none;
+}
+.img-block {
+  display: block;
+}

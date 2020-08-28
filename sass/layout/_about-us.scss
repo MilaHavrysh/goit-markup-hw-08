@@ -1,0 +1,88 @@
+.about-us {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 47px;
+  }
+}
+
+.about-us-list {
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.about-us-item {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    &:nth-child(odd) {
+      margin-right: 30px;
+    }
+    &:nth-child(-n + 2) {
+      margin-bottom: 30px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    text-align: center;
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.about-us-item-antenna::before,
+.about-us-item-clock::before,
+.about-us-item-diagram::before,
+.about-us-item-astronaut::before {
+  max-width: 450px;
+  @extend %about-us-svg;
+  @media screen and (min-width: 768px) {
+    max-width: 354px;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 270px;
+  }
+}
+
+.about-us-item-antenna::before {
+  background-image: url(../images/svg/antenna.svg);
+}
+
+.about-us-item-clock::before {
+  background-image: url(../images/svg/clock.svg);
+}
+.about-us-item-diagram::before {
+  background-image: url(../images/svg/diagram.svg);
+}
+
+.about-us-item-astronaut::before {
+  background-image: url(../images/svg/astronaut.svg);
+}
+
+.about-us .about-us-subtitle {
+  color: $title-light-theme-color;
+  text-transform: uppercase;
+  @include textProp(700, 1.14);
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+  @media screen and (min-width: 1200px) {
+    text-align: left;
+  }
+}
+.about-us-description {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  @include textProp(400, 1.71);
+  text-align: left;
+  max-width: 450px;
+  @media screen and (min-width: 768px) {
+    max-width: 354px;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 270px;
+  }
+}
