@@ -9,6 +9,7 @@
 
 .about-us-list {
   display: block;
+  margin: -15px;
   @media screen and (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
@@ -17,20 +18,7 @@
 }
 
 .about-us-item {
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    &:nth-child(odd) {
-      margin-right: 30px;
-    }
-    &:nth-child(-n + 2) {
-      margin-bottom: 30px;
-    }
-  }
-  @media screen and (min-width: 1200px) {
-    text-align: center;
-    &:not(:last-child) {
-      margin-right: 30px;
-    }
-  }
+  margin: 15px;
 }
 
 .about-us-item-antenna::before,
